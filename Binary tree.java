@@ -1,3 +1,4 @@
+import java.utils.*;
 /**
  * Created by BenjiFischman on 1-12-2016.
  */
@@ -76,7 +77,7 @@ private void addNode(Node pNode, Node newNode) {
 		*
 			* Unlink the leaf, and the garbage collector will delete it.
 			*
-				* public void deleteNode(Node node) {
+public void deleteNode(Node node) {
    // Node is a leaf node //
    if( node.getLeftNode() == null && node.getRightNode() == null){
       if(isRightNode(node.getParentNode(), node)){
@@ -85,12 +86,9 @@ private void addNode(Node pNode, Node newNode) {
          node.getParentNode().setLeftNode(null);
       }
 
-
 		* One Child
 		* 
 			* Ensure node is not the root of a subtree
-
-
 
 	* Left Child
 	* // Only left child is there//
@@ -100,6 +98,7 @@ private void addNode(Node pNode, Node newNode) {
       }else{
          node.getParentNode().setLeftNode(node.getLeftNode());
       }
+
 	* Right Child
 	*   // Only Right child is there //
    }else if( node.getLeftNode() == null && node.getRightNode() != null){
@@ -133,7 +132,7 @@ Breadth- first
 	* Level Order Traversal O(n)
 
 	* Implement with a Queue
-	* private void levelOrderTraversal ( Node node){
+private void levelOrderTraversal ( Node node){
    if( node == null){
       return;
    }
